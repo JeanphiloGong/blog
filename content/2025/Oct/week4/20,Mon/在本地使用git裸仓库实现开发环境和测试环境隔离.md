@@ -84,6 +84,20 @@ git clone ~/.repos/scrapy.git
 这样你就得到了一个干净的副本，可以在这里模拟部署、运行测试，而不会影响开发环境。
 
 ---
+ps. 很多时候
+```pgsql
+warning: remote HEAD refers to nonexistent ref, unable to checkout
+```
+会出现这个错误,是由于我们新建的裸仓库虽然已经 init --bare 了,但是没有默认的HEAD指针,所以我们git clone的时候不知道该检出哪个分支
+
+进入裸仓库,使用
+```bash
+cd ~/.repos/scrapy.git
+git symbolic-ref HEAD refs/heads/main
+```
+之后再重新clone一次就可以了
+
+
 
 ## 步骤五：后续同步流程
 
