@@ -76,7 +76,7 @@ uv init
 #### 3️⃣ 导入旧依赖
 
 ```bash
-uv add --from-requirements requirements.txt
+uv add --requirements requirements.txt
 ```
 
 这一步会自动写入依赖并生成 `uv.lock`。
